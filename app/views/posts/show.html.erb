@@ -8,3 +8,27 @@
   :confirm => 'Are you sure?',
   :method => 'Delete'
   } %></p>
+
+<hr>
+
+<h2>Comments</h2>
+
+<% if @post.comments.any? %>
+  <% @post.comments.each do |comment| %>
+    <div class="comment-body">
+      <p>Author: <%= comment.author %></p>
+      <p>Date: <%= comment.created_at %></p>
+      <p><%= comment.content %></p>
+      <%= link_to 'Edit', edit_post_comment_path(@post, comment), :class => 'btn btn-outline-primary btn-sm' %>
+      <%= link_to 'Delete', post_comment_path(@post, comment), :data => {
+        :confirm => 'Are you sure?',
+        :method => 'Delete'
+        },
+        :class => 'btn btn-outline-danger btn-sm' %>
+      <hr>
+    </div>
+
+  <% end %>
+<% else %>
+  <p>No comments yet.</p>
+<% end %>

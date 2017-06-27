@@ -11,6 +11,8 @@
 ### Further Exploration
 - [] Custom CSS styling
 - [] Comments within comments
+- [] Scopes
+- [] Add/edit comments on the same page as the post
 
 
 
