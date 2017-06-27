@@ -9,6 +9,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="jumbotron text-center">
+        <h1>Hacker News</h1>
+      </div>
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
+      <%= yield %>
+    </div>
+
   </body>
 </html>

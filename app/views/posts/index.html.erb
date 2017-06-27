@@ -1,0 +1,11 @@
+<h1>Hacker News</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %> - <small><%= post.author %></small></li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= link_to "New Post", new_post_path %>

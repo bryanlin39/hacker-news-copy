@@ -1,0 +1,10 @@
+<h1><%= @post.title %> | <small>Votes: <%= @post.votes %></small></h1>
+
+<h3><%= link_to @post.link, @post.link %></h3>
+<h3>Posted by <%= @post.author %></h3>
+
+<p><%= link_to 'Edit Post', edit_post_path %></p>
+<p><%= link_to 'Delete Post', post_path(@post), :data => {
+  :confirm => 'Are you sure?',
+  :method => 'Delete'
+  } %></p>

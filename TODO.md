@@ -13,6 +13,14 @@
 - [] Comments within comments
 
 
+
+rails g model class column1:type column2:type
+  (class is singular, don't need to specify type if string)
+
+rails g controller classes view1 view2
+  (class is plural, index new show edit)
+
+
 TASKS
 id      task_name      list_id
 1         clean           1
