@@ -25,7 +25,15 @@ rails g controller classes view1 view2
 before_action in controller
   (if for only certain methods, use 'only: [:new, etc.]')
 
-add member to routes.rb for custom controller actions
+add member to routes.rb for custom controller actions (e.g. patch for upvote)
+
+set default value for class property by including it in the migration
+
+notice - include in the same line as the redirect (in controller)
+
+search form with custom route and form helper
+
+
 
 
 TASKS
