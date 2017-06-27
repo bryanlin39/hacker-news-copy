@@ -9,3 +9,35 @@
 <hr>
 
 <%= link_to "New Post", new_post_path %>
+
+<h3>3 Most Recent Posts</h3>
+
+<ul>
+  <% @posts.three_most_recent_post.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %> - <small><%= post.author %> | <%= post.votes %></small></li>
+  <% end %>
+</ul>
+
+<h3>5 Most Upvoted Posts</h3>
+
+<ul>
+  <% @posts.five_most_upvoted.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %> - <small><%= post.author %> | <%= post.votes %></small></li>
+  <% end %>
+</ul>
+
+<h3>Posts With the Most Comments</h3>
+<ul>
+  <% @posts.most_commented.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %> - <small><%= post.author %></small></li>
+  <% end %>
+</ul>
+
+<h3>Search</h3>
+
+
+<%= form_tag("/posts/search", :method => 'get') do %>
+  <%= label_tag(:keyword, "Search for:") %>
+  <%= text_field_tag(:keyword) %>
+  <%= submit_tag("Search") %>
+<% end %>

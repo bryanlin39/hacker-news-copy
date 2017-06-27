@@ -51,6 +51,11 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def search_result
+    keyword = params[:keyword]
+    @posts = Post.search(keyword)
+  end
+
 private
 
   def post_params

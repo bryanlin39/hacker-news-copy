@@ -33,9 +33,6 @@ class CommentsController < ApplicationController
     redirect_to post_path(@post), notice: 'Comment successfully deleted'
   end
 
-
-
-
 private
 
   def comment_params
