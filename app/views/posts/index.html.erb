@@ -2,7 +2,7 @@
 
 <ul>
   <% @posts.each do |post| %>
-    <li><%= link_to post.title, post_path(post) %> - <small><%= post.author %></small></li>
+    <li><%= link_to post.title, post_path(post) %> - <small><%= post.author %> | <%= post.votes %></small></li>
   <% end %>
 </ul>
 

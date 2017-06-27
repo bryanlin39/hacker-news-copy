@@ -1,4 +1,7 @@
-<h1><%= @post.title %> | <small>Votes: <%= @post.votes %></small></h1>
+<h1><%= @post.title %> |
+<small>Votes: <%= @post.votes %></small>
+<%= link_to 'Upvote', upvote_post_path(@post), :method => 'patch', :class => 'btn btn-outline-success btn-sm' %>
+</h1>
 
 <h3><%= link_to @post.link, @post.link %></h3>
 <h3>Posted by <%= @post.author %></h3>
@@ -8,7 +11,7 @@
   :confirm => 'Are you sure?',
   :method => 'Delete'
   } %></p>
-
+<p><%= link_to 'Add Comment', new_post_comment_path(@post) %></p>
 <hr>
 
 <h2>Comments</h2>
@@ -20,9 +23,9 @@
       <p>Date: <%= comment.created_at %></p>
       <p><%= comment.content %></p>
       <%= link_to 'Edit', edit_post_comment_path(@post, comment), :class => 'btn btn-outline-primary btn-sm' %>
-      <%= link_to 'Delete', post_comment_path(@post, comment), :data => {
+      <%= link_to 'Delete', post_comment_path(@post, comment), :method => 'delete',
+       :data => {
         :confirm => 'Are you sure?',
-        :method => 'Delete'
         },
         :class => 'btn btn-outline-danger btn-sm' %>
       <hr>

@@ -22,6 +22,11 @@ rails g model class column1:type column2:type
 rails g controller classes view1 view2
   (class is plural, index new show edit)
 
+before_action in controller
+  (if for only certain methods, use 'only: [:new, etc.]')
+
+add member to routes.rb for custom controller actions
+
 
 TASKS
 id      task_name      list_id
